@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Checkout - Douratto</title>
+
+    <!-- mesma fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <!-- ícone home à esquerda -->
+        <a href="index.html" class="home-link" aria-label="Voltar para home">🏠</a>
+
+        <!-- nome central -->
+        <h1 class="logo-text">Douratto</h1>
+
+        <!-- espaço vazio para centralizar -->
+        <div style="width:32px;"></div>
+    </header>
+
+    <main class="checkout-main">
+        <h1>Seu Pedido</h1>
+
+        <section class="checkout-cart">
+            <h2>Itens</h2>
+            <div id="lista-itens"></div>
+            <p id="subtotal">Subtotal: R$ 0,00</p>
+            <p id="taxa-entrega" style="display:none;">Taxa de entrega: R$ 0,00</p>
+            <p id="total-geral"><strong>Total: R$ 0,00</strong></p>
+        </section>
+
+        <section class="checkout-form">
+            <h2>Dados para Entrega</h2>
+            <label><input type="radio" name="tipo" value="retirar" checked> Retirar no local</label>
+            <label><input type="radio" name="tipo" value="entrega"> Entrega (R$ 5,00)</label>
+
+            <input type="text" id="nome-c" placeholder="Nome" required>
+            <input type="tel" id="telefone-c" placeholder="Telefone" required>
+            <input type="text" id="endereco-c" placeholder="Endereço (se entrega)">
+
+            <div class="checkout-actions">
+                <button id="cancelar" class="btn">Cancelar pedido</button>
+                <button id="finalizar" class="btn">Finalizar pedido</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><p>© 2025 Douratto</p></footer>
+
+    <script src="checkout.js" defer></script>
+</body>
+</html>

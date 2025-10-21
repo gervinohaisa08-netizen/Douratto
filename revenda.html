@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Seja um Revendedor - Douratto</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== ESTILO EXCLUSIVO DA PÁGINA DE REVENDA ===== */
+    body {
+      background-color: #fffdf8;
+      color: #4e342e;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .revenda {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .revenda h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #4e342e;
+    }
+
+    .revenda p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #6d4c41;
+    }
+
+    #revenda-form {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #revenda-form input,
+    #revenda-form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 12px 15px;
+      border: 2px solid #c19a6b;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      background-color: #fffdf8;
+      color: #4e342e;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    #revenda-form input:focus,
+    #revenda-form textarea:focus {
+      border-color: #4e342e;
+      box-shadow: 0 0 6px rgba(78, 52, 46, 0.4);
+    }
+
+    #revenda-form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    #revenda-form .btn {
+      width: 220px;
+      padding: 12px 18px;
+      background-color: #4e342e;
+      color: #f8e7c1;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s, transform 0.2s;
+    }
+
+    #revenda-form .btn:hover {
+      background-color: #6d4c41;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .revenda {
+        padding: 40px 15px;
+      }
+
+      #revenda-form {
+        width: 100%;
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="Logo Douratto" class="logo">
+    <nav class="navbar">
+      <a href="index.html">Início</a>
+      <a href="#form">Formulário</a>
+    </nav>
+  </header>
+
+  <section id="form" class="revenda">
+    <h2>Seja um Revendedor Douratto</h2>
+    <p>Preencha o formulário abaixo e entraremos em contato para parcerias e revendas exclusivas.</p>
+    
+    <form id="revenda-form">
+      <input type="text" id="nome" placeholder="Seu nome completo" required>
+      <input type="tel" id="telefone" placeholder="Telefone/WhatsApp" required>
+      <input type="text" id="loja" placeholder="Nome da loja ou empresa" required>
+      <input type="text" id="cnpj" placeholder="CNPJ ou CPF" required>
+      <textarea id="mensagem" placeholder="Fale um pouco sobre sua loja e região de atuação" required></textarea>
+      <button type="submit" class="btn">Enviar Solicitação</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Douratto — Um toque de ouro em cada sabor.</p>
+  </footer>
+
+  <script>
+  document.getElementById('revenda-form').addEventListener('submit', e => {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const loja = document.getElementById('loja').value.trim();
+    const cnpj = document.getElementById('cnpj').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (!nome || !telefone || !loja || !cnpj || !mensagem) {
+      alert('Por favor, preencha todos os campos!');
+      return;
+    }
+
+    // Número do dono da marca Douratto (WhatsApp Business)
+    const numeroWhatsApp = "5516993725808"; // coloque o número correto, sem espaços nem traços
+
+    const texto = 
+      `📩 *Nova solicitação de revenda Douratto!*%0A%0A` +
+      `👤 *Nome:* ${nome}%0A` +
+      `🏪 *Loja:* ${loja}%0A` +
+      `🧾 *CNPJ/CPF:* ${cnpj}%0A` +
+      `📞 *Telefone:* ${telefone}%0A%0A` +
+      `💬 *Mensagem:* ${mensagem}%0A%0A` +
+      `🕒 Enviado pelo site Douratto.`;
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+
+  });
+  </script>
+</body>
+</html>
