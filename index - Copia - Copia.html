@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Douratto - Geladinhos Gourmet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="Logo Douratto" class="logo">
+    <nav class="navbar">
+      <a href="#inicio">Início</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#lojas">Lojas</a>
+      <a href="revenda.html">Revenda</a>
+      <button id="btn-carrinho" class="carrinho-btn" aria-label="Carrinho">🛒</button>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-texto">
+      <h1>Um toque de ouro em cada sabor</h1>
+      <p>Geladinhos artesanais com ingredientes selecionados e um toque de sofisticação italiana.</p>
+      <a href="#sabores" class="btn">Peça agora</a>
+    </div>
+  </section>
+
+  <section id="sabores" class="sabores">
+    <h2>Nossos Sabores</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="maracuja.png" alt="Maracujá">
+        <h3>Maracujá</h3>
+        <p>R$ 8,00</p>
+        <button class="btn adicionar" data-produto="Maracujá" data-preco="8.00">Adicionar</button>
+      </div>
+      <div class="card">
+        <img src="cappuccino.png" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>R$ 8,00</p>
+        <button class="btn adicionar" data-produto="Cappuccino" data-preco="8.00">Adicionar</button>
+      </div>
+      <div class="card">
+        <img src="leite-ninho.png" alt="Leite Ninho">
+        <h3>Leite Ninho</h3>
+        <p>R$ 8,00</p>
+        <button class="btn adicionar" data-produto="Leite Ninho" data-preco="8.00">Adicionar</button>
+      </div>
+      <div class="card">
+        <img src="oreo.png" alt="Oreo">
+        <h3>Oreo</h3>
+        <p>R$ 8,00</p>
+        <button class="btn adicionar" data-produto="Oreo" data-preco="8.00">Adicionar</button>
+      </div>
+      <div class="card">
+        <img src="geladinho-ovomaltine.png" alt="Ovomaltine">
+        <h3>Ovomaltine</h3>
+        <p>R$ 8,00</p>
+        <button class="btn adicionar" data-produto="Ovomaltine" data-preco="8.00">Adicionar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Na Douratto, cada geladinho é preparado com paixão, ingredientes premium e o equilíbrio perfeito entre sabor e textura.</p>
+  </section>
+
+  <section id="lojas" class="lojas">
+    <h2>Nossas Lojas e Filiais</h2>
+    <div class="lojas-container">
+      <div class="loja-card">
+        <h3>Sweet & Salty - Salgaderia</h3>
+        <p>📍 Rua Maria Pires, 355 - Cajuru/SP</p>
+        <p>📞 (16) 99248-8338</p>
+        <p>🕒 Seg a Sex - 8h às 17:30h</p>
+      </div>
+      <div class="loja-card">
+        <h3>Douratto</h3>
+        <p>📍 Rua Capitão José Ferreira Diniz, 904 - Cajuru/SP</p>
+        <p>📞 (16) 99426-5989 ou (16) 99372-5808</p>
+        <p>🕒 Entre em contato para consultar horário</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Douratto — Um toque de ouro em cada sabor.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
