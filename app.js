@@ -1,49 +1,15 @@
-// app.js - carrinho usando localStorage, incrementa quantidade se já existir
+// app.js — Botões para enviar o sabor direto no WhatsApp
 document.addEventListener('DOMContentLoaded', () => {
-    const adicionarBtns = document.querySelectorAll('.adicionar');
-    const carrinhoBtn = document.getElementById('btn-carrinho');
+  const botoes = document.querySelectorAll('.pedir');
+  const numeroWhatsApp = '5516994265989'; // coloque aqui o número do WhatsApp que recebe pedidos
 
-    function carregarCart() {
-        const raw = localStorage.getItem('dourattoCart');
-        if (!raw) return [];
-        try { return JSON.parse(raw); } catch(e) { return []; }
-    }
-    function salvarCart(cart) { localStorage.setItem('dourattoCart', JSON.stringify(cart)); }
-
-    function adicionarProduto(produto, preco, btnEl) {
-        const cart = carregarCart();
-        const found = cart.find(i => i.produto === produto);
-        if (found) {
-            found.qtd = (found.qtd || 1) + 1;
-        } else {
-            cart.push({ produto, preco: parseFloat(preco), qtd: 1 });
-        }
-        salvarCart(cart);
-
-        // animação e feedback
-        if (btnEl) {
-            btnEl.classList.add('adicionado');
-            const old = btnEl.textContent;
-            btnEl.textContent = 'Adicionado ✓';
-            setTimeout(() => {
-                btnEl.classList.remove('adicionado');
-                btnEl.textContent = old;
-            }, 700);
-        }
-    }
-
-    adicionarBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const produto = btn.getAttribute('data-produto');
-            const preco = btn.getAttribute('data-preco');
-            adicionarProduto(produto, preco, btn);
-        });
+  botoes.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const produto = btn.getAttribute('data-produto');
+      const preco = btn.getAttribute('data-preco');
+      const mensagem = `🍦 Olá! Gostaria de pedir o sabor *${produto}* (R$ ${preco}).`;
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
     });
-
-    // Ao clicar no carrinho, vai para checkout.html
-    if (carrinhoBtn) {
-        carrinhoBtn.addEventListener('click', () => {
-            window.location.href = 'checkout.html';
-        });
-    }
+  });
 });
